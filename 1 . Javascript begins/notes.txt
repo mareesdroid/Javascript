@@ -1,0 +1,30 @@
+
+                                    Javascript basics
+what is javascript 
+    Javasccript is a lightweight, cross-platform, object-oriented programming language.
+    Javascript is one of the three core technologies of web development.
+
+    Today javascript can be used in different places:
+        - client-side : Javacript was traditionally only used in browser
+        - server - side : thanks to node.js, we can use javascript on the server as well
+
+    javascript is what made modern development possible.
+
+                variable s and data types
+variable:
+    variable is a like container which we can store our data and we can use it over and over again
+Data types:
+    Number
+    String
+    Boolean
+    Undefined :-> variable does not have value yet
+    Null :-> non existent data
+
+***** Javascript has dynamic typing: data types are automatically assigned to variables. ***********
+
+
+
+
+
+
+
