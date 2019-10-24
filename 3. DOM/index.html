@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link href="https://fonts.googleapis.com/css?family=Lato:100,300,600" rel="stylesheet" type="text/css">
+        <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css">
+        <link type="text/css" rel="stylesheet" href="style.css">
+        
+        <title>Game test</title>
+    </head>
+
+    <body>
+        <div class="wrapper clearfix">
+            <div class="player-0-panel active">
+                <div class="player-name" id="name-0">Player 1</div>
+                <div class="player-score" id="score-0">43</div>
+                <div class="player-current-box">
+                    <div class="player-current-label">Current</div>
+                    <div class="player-current-score" id="current-0">11</div>
+                </div>
+            </div>
+            
+            <div class="player-1-panel">
+                <div class="player-name" id="name-1">Player 2</div>
+                <div class="player-score" id="score-1">72</div>
+                <div class="player-current-box">
+                    <div class="player-current-label">Current</div>
+                    <div class="player-current-score" id="current-1">0</div>
+                </div>
+            </div>
+
+            <div class="player-help-panel">
+                <h1 class="my-head">How to play?</h1><br><br>
+                <h2>1.Each player roll a dice</h2><br>
+                <h2>2.If player rolls a 1 then current round score will be 0</h2><br>
+                <h2>3.If player rolls a double six in two dice mode then your entire score will be 0</h2><br>
+                <h2>4.Player who gets the score 100 wins the game</h2>
+                <button class="help-home">Got it</button>
+            </div>
+            
+            <div class="player-setting-panel">
+                <h2 class="my-head">Custom score</h2><br><br>
+                <h3>Click score to modify</h3>
+                <br>
+                <pre class="score-waker">       Corrent score is : <p id="custom-score">100</p></pre><br><br>
+                <h2 class="my-head">Dice count</h2><br>
+                <div class="icon-holder">
+                    <img class="custom-icon-one" src="dice.png"/>
+                    <img class="custom-icon-two" src="dices.png" />
+                    <p style="float: left;width:64px;">One</p>
+                    <p style="float: right; width:64px;">Two</p>
+                </div>
+               
+               <div class = "my-check"><br>
+               <input class = "my-check"type="checkbox" name="vehicle1" value="Bike"&nbsp>  Double six penlty  <br>
+            </div>
+                <button class="back-btn">Back</button>
+            </div>
+            <button class="btn-new"><i class="ion-ios-plus-outline"></i>New game</button>
+            <button class="btn-roll"><i class="ion-ios-loop"></i>Roll dice</button>
+            <button class="btn-hold"><i class="ion-ios-download-outline"></i>Hold</button>
+            
+            <button class="game-setting"><i class="ion-ios-settings-strong"></i><br>Settings</button>
+            <button class="game-help"><i class="ion-help"></i><br>How to play</button>
+            <img src="dice-5.png" alt="Dice" class="dice-one">
+            <img src="dice-4.png" alt="Dice" class="dice-two">
+        </div>
+       
+        
+        <script src="app.js"></script>
+    </body>
+</html>
