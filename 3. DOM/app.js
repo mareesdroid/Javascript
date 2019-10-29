@@ -201,7 +201,11 @@ function rollingDice() {
     }
 }
 
-//// two 6 in a round loses entire score
-//// add two dices
-//// custom score
+/*
+    TODO
+            two 6 in a round loses entire score
+            add two dices
+            custom score
+*/
+
 

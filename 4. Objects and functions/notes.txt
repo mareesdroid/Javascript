@@ -1,0 +1,28 @@
+******** object oriented programming ********
+objects interacting with one another through methods and properties.
+used to store data, structure applications into modules and kepping code clean.
+******** Inheritance ***************
+inheritance is one object based on other object
+*******prototype property********
+every javascript object has a PROTOTYPE PROPERTY, which makes inheritance possible in javascript;
+the prototype property of an object is where we put methods we put methods and properties that we want OTHER OBJECT TO INHERIT;
+the constructor's prototype propery is NOT the prototype of the constructor itself, it's the prototype of ALL instances that are created through it;
+When a certain method (or property) is called, the search starts in object itself, and if it cannot be found, the search moves on to the object's prototype. this continues until the method is found: PROTOTYPE CHAIN.
+******* console ***********
+if u forget some function like array object function then go to console log 
+type:
+x=[1,2,3];
+x
+you can see array in log in arrow mark you can see it's properties in proto you can see what function can be used like push pop reverse
+see screenshot in evernote
+*********** functions ************
+    -A functon is an instance of the Onject type
+    -A function behaves like any other object
+    -We can store functions in a variable
+    -We can pass a function as an argument to another function 
+    -We can return a function from a function 
+
+
+*********** closures ***********
+An inner function has always access to the variables and parametersof its outer functions, even after the outer function has returned.
+

@@ -1,7 +1,7 @@
 /*********************************
 *   function quick walkthrough   *
 *********************************/
-/*
+
 console.log(testFun());             ///log anywhere before or after function declaration
 
 function testFun(){                                                                              ///fun definition
@@ -22,7 +22,7 @@ console.log(helloFun());        ///function call after function expression only
 /*********************************
 *   variable quick walkthrough   *
 *********************************/
-/*
+
 console.log(helloVar);    //undefined
 var helloVar = 'Hiii';
 console.log(helloVar);    //sring hii
@@ -34,7 +34,7 @@ console.log(helloStranger);  //Uncaught ReferenceError: helloStranger is not def
 /*****************
 *   scope test   *
 ******************/
-/*
+
 var testVar = "I'm Global";
 
 function heyFun(){
@@ -48,7 +48,7 @@ console.log(testVar);                   //I'm Global
 /************************
 *   global scope test1  *
 ************************/
-/*
+
 var a = "I'm in global";            ///global scope
 
 function first(){
@@ -66,7 +66,7 @@ console.log(a+', '+b+', '+c);   //script.js:62 Uncaught ReferenceError: b is not
 /************************
 *   global scope test2  *
 ************************/
-/*
+
 var a = 5;
 function first(){
     var a = 10;
@@ -86,7 +86,7 @@ first();
 /************************
 *       this keyword    *
 ************************/
-/*
+
 console.log(this);    ///in global this keyword is a window
 testun();
 function testun(){

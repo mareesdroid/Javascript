@@ -2,16 +2,16 @@
                                                                     *           Hello world          *
                                                                     *********************************/
 
-/*                                                    
+                                                   
 console.log("Hello world!");
-/*
+
 
 
                                                                     /********************************
                                                                     *   Variables and data types    *
                                                                     *********************************/ 
 
-/*
+
 var myName = 'Marees';
 var age = 24;
 var isMarried = false;
@@ -29,7 +29,7 @@ console.log('this is a null value '+nullTest);
                                                                     * Variable mutation and type coercion *
                                                                     ***************************************/
 
-/*
+
 var firstName = 'Marees';
 var age = 24;
 // type coercion 
@@ -49,7 +49,7 @@ console.log(firstName + 'is a ' + age + ' year old' + job + '. Is he married ' +
                                                                     /*********************************
                                                                     *           Basic operators      *
                                                                     *********************************/
-/*                                                                   
+                                                                 
 var calcData = prompt("Enter calc data entered number mult,div,sum,diff by 2");
 
 
@@ -73,7 +73,7 @@ typeof calcData;
                                                                     /*********************************
                                                                     *       operator precedence      *
                                                                     *********************************/
-/*                                                                   
+                                                                  
 var now = 2019;
 var yearMars = 1995;
 var fullAge = 18;
@@ -104,7 +104,7 @@ Mark and John are trying to compare their BMI (Body Mass Index), which is calcul
 4. Print a string to the console containing the variable from step 3. (Something like "Is Mark's BMI higher than John's? true"). 
 
 GOOD LUCK 😀
-/*
+*/
 
 var markHeight = prompt('Enter mark height in meters');
 var markWeight = prompt('Enter mark weight');
@@ -118,11 +118,11 @@ var isMarkHigherBMI = markBMI > johnBMI;
 console.log('Is mark has higher bmi than john? ' + isMarkHigherBMI);
 console.log('Mark BMI : ' + markBMI + ' John BMI : '+ johnBMI);
 
-/*
+
                                                                     /*********************************
                                                                     *       If / else statements     *
                                                                     *********************************/
-/*                                                                   
+                                                                  
 
 var name = 'Marees';
 var maritalStatus = 'Single';
@@ -132,13 +132,13 @@ if(maritalStatus === 'Married'){
 } else {
     console.log(name + " will going to marry soon :)");
 }
-*/
+
 
 
                                                                     /*********************************
                                                                     *      If / else Boolean logic   *
                                                                     *********************************/
-/*
+
 var name = 'Marees';
 var age = 24;
 
@@ -159,7 +159,7 @@ if(age < 6 && age > 1){
                                                                     /***********************************************
                                                                     *  The Ternary Operator and Switch Statements  *
                                                                     ***********************************************/
-/*
+
 // ternary
 var name = 'Marees';
 var age = '24';
@@ -188,14 +188,14 @@ switch(job){
         console.log('Hey! '+name + ' search for a job');
         break;
 }
-*/
+
                                                                     /*************************************************
                                                                     * Truthy and Falsy values and equality operators *
                                                                     **************************************************/
 
 // falsy values: undefined, null, 0, '', NaN
 // truthy values: NOT falsy values
-/*
+
  var test,test1,test2,test3;
  test1 = null;
  test2 = 0;
@@ -224,7 +224,7 @@ if(!(myNum === '10')){
     console.log('javascript === operator strictly checks the data type and value or true');
 }
 
-*/
+
                                                                     /*********************************
                                                                     *         CODING CHALLENGE 2     *
                                                                     *********************************/
@@ -241,7 +241,7 @@ John and Mike both play basketball in different teams. In the latest 3 games, Jo
 
 GOOD LUCK 😀
 */
-/*
+
 var johnTeam, mikeTeam, maryTeam;
 var totalRounds = 3;
 var winningTeam = '';
@@ -263,11 +263,11 @@ if(johnTeam > mikeTeam && johnTeam > maryTeam){
     winningTeam = 'Mary Team';
 }
 console.log('The Winner is ' + winningTeam);
-*/
+
                                                                     /*********************************
                                                                     *           Functions            *
                                                                     *********************************/
-/*
+
 function calculateAge(birthYear){
     return 2019 - birthYear;
 }
@@ -281,11 +281,11 @@ console.log(calculateRetirement('Marees', 1995));
 function calculateRetirement(name, year){
     return name + ' Retirement is in ' + (65 - parseInt(calculateAge(year)) + ' Years');
 }
-*/
+
                                                                     /**************************************
                                                                     * Function Statements and Expressions *
                                                                     **************************************/
-/*
+
 // function declaration
 // function whatWorkHeDo(name,job){ }
 
@@ -308,11 +308,11 @@ console.log(whatWorkHeDo('marees','Application Developer'));
 console.log(whatWorkHeDo('yuvaraj','Program Analyst'));
 console.log(whatWorkHeDo('elavarasan','Supervisor'));
 
-*/
+
                                                                     /********************************
                                                                     *               Arrays          *
                                                                     *********************************/
-/*
+
 //Initialize new array
 var names = ['Marees', 'Yuvaraj', 'Elavarasan'];
 var years = new Array(1995, 1989, 1987);
@@ -348,7 +348,7 @@ findPosition = mixed.indexOf('return -1 if value not find in array');
 // so in future you can find if a data exist or not if - data not exist else data contains
 console.log(findPosition);
 
-*/
+
 
                                                                     /*********************************
                                                                     *       CODING CHALLENGE 3       *
@@ -367,7 +367,7 @@ In the end, John would like to have 2 arrays:
 
 GOOD LUCK 😀
 */
-/*
+
 function calcTip(myBill){
     if(myBill > 200){
         //10%
@@ -385,12 +385,12 @@ var restaurantBill = [124, 48, 268];
 console.log('Hotel1 : \n' + calcTip(restaurantBill[0]));
 console.log('Hotel2 : \n' + calcTip(restaurantBill[1]));
 console.log('Hotel3 : \n' + calcTip(restaurantBill[2]));
-*/
+
 
                                                                     /*********************************
                                                                     *       Objects and properties   *
                                                                     *********************************/
-/*
+
 
 // new Object syntax
 var profile = new Object();
@@ -449,7 +449,7 @@ console.log(profileList);
                                                                     /*********************************
                                                                     *        Objects and methods     *
                                                                     *********************************/
-/*
+
 var mars = {
     name:'',
     birthYear:1995,
@@ -474,7 +474,7 @@ Remember: BMI = mass / height^2 = mass / (height * height). (mass in kg and heig
 GOOD LUCK 😀
 */
 
-/*
+
 var markDetail = {
     name : 'Mark',
     height : '1.8',
@@ -500,7 +500,7 @@ if(markDetail.bmi()>johnDetail.bmi()){
                                                                     /********************************
                                                                     *       Loops and iteration     *
                                                                     *********************************/
-/*
+
 
 var testArray = ['Marees','MCA','Developer',1995,'Benchmark business software','blue'];
 
@@ -550,7 +550,7 @@ Mark likes to tip 20% of the bill when the bill is less than $100, 10% when the 
 
 GOOD LUCK 😀
 */
-/*
+
 
 johnBill = [124, 48, 268, 180, 42];
 markBill = [77, 375, 110, 45];
@@ -637,4 +637,3 @@ johnBills.avgTip = calculateAvgTip(johnBills.tip);
 markBills.avgTip = calculateAvgTip(markBills.tip);
 johnBills.tipAvg > markBills.tipAvg ? console.log('Highest tip paid family is John') :console.log('Highest tip paid family is Mark');
 
-*/
