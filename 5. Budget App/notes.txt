@@ -1,0 +1,179 @@
+********* modules **********
+Important aspect of any robust application's architecture
+keep units of code for a project both cleanly seperated and organized.
+Encapsulate some data into privacy and expose other data publicly 
+
+
+UI MODULE:
+    - Get input values
+    - Add the new item to the UI
+    - Update the UI
+
+DATA MODULE:
+    - Add the new item to our data structure
+    - Calculate budget
+
+CONTROLLER MODULE:
+    - Add event handler
+
+
+
+******** what you will learn ******
+    - How to use the module pattern
+    - more about private and public data, encapsulation and seperation of concerns. 
+
+
+*********** private, public injavscript with help of closure ********* x ************
+var budgetController = (function(){
+
+                            /////private (scope only inside a function)
+    var x = 23;
+    var add = function(a){
+        return x + a;
+    }
+
+    return{
+        publicTest : function(b){
+            console.log(add(b));
+        }
+    }
+
+})();
+
+/**
+output:
+
+budgetController.x                  ////cannot accessible because it's private
+undefined
+
+
+budgetController.add(10)            ////add function is private also
+VM305:1 Uncaught TypeError: budgetController.add is not a function
+                            at <anonymous>:1:18
+                            (anonymous) @ VM305:1
+
+
+budgetController.publicTest(10)    app.js:9             ////accessible because public
+33
+undefined
+
+ */
+
+
+/*full walkthrough
+line 1 get executed anonymous function is declared and immediately called (because of the IIFE function() see notes on part - 4 for IIFE)
+from line 2 to 7 are declared and return as a object in line 9 to 13
+after all the line executed var budgetController is a simply containing method called publicTest
+        see closures for more detail(part - 4 notes)
+because of closure we can access all the variable and method even after the function is returned
+
+we cannot access x and add function directly because of the closure we can access it by help of closure return
+
+*/
+
+*********** MODULE PATTERN ************
+
+var budgetController = (function(){
+        ///Budget Module
+})();
+
+var UIController = (function(){
+    /// UI Module
+})();
+
+var AppController = (function(){
+    //App module
+})();
+
+/*
+Each module are statndalone 
+not depend on each other
+not affecting other data
+each module don't know the existense of the other modules
+*/
+
+
+********* new keyword *********
+new keyword creates new empty object of existing object see the example below
+
+    var Myfunctionconstructor = function(id, name, age){
+        this.id = id;
+        this.name = name;
+        this.age = age;
+    };
+
+    var empOne = new Myfunctionconstructor(635, 'Marees', 24);
+
+    var empTwo = new Myfunctionconstructor(345, 'Yuvaraj', 30);
+
+    console.log(empOne);
+    console.log(empTwo);
+
+    output:
+    {
+        'id':635,
+        'name':'Marees',
+        'age':24
+    }
+
+    {
+        'id':345,
+        'name':'Yuvaraj',
+        'age':30
+    }
+
+********* Event Delegation *********
+
+ex:
+imagine a cardview it contains textviews,buttons,images,etc..
+
+when user clicked the button entire cardview hmtl element is affected(deleted/modified) it's called event delegation
+
+    - here that button handle that delete event is a TARGET ELEMENT 
+    - This root of the html change event is called event delegation
+
+********* DOM Traversing *********
+get parent class by target element(button/ image)
+imagine following html
+
+user clicks on close icon(ion-ios-close-outline) from that target we find which is pareent/root id (income-0/1/2) this method is called DOM traversing
+
+javascript:
+
+add click event listener for main root class example(root-view)
+document.querySelector('.root-view').addEventlistener('click',function(){
+                                                                            //4 parent node because ion-ios-close-outline has 4 parents to get the income-0 .id because we are getting id
+    console.log(event.target.parentNode.parentNode.parentNode.parentNode.id);
+});
+
+html:
+<div class="root-view">
+      <div class="item clearfix" id="income-0">
+                            <div class="item__description">Salary</div>
+                            <div class="right clearfix">
+                                <div class="item__value">+ 2,100.00</div>
+                                <div class="item__delete">
+                                    <button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button>
+                                </div>
+                            </div>
+                        </div>
+        <div class="item clearfix" id="income-1">
+                            <div class="item__description">Salary</div>
+                            <div class="right clearfix">
+                                <div class="item__value">+ 2,100.00</div>
+                                <div class="item__delete">
+                                    <button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button>
+                                </div>
+                            </div>
+                        </div>
+        <div class="item clearfix" id="income-2">
+                            <div class="item__description">Salary</div>
+                            <div class="right clearfix">
+                                <div class="item__value">+ 2,100.00</div>
+                                <div class="item__delete">
+                                    <button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button>
+                                </div>
+                            </div>
+                        </div>
+</div>
+

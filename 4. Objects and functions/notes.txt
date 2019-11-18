@@ -23,6 +23,17 @@ see screenshot in evernote
     -We can return a function from a function 
 
 
+/*********************************
+ *             IIFE                *
+ *********************************/
+
+//Immediately Invoked Function Expression
+// use it for init
+(function () {
+    let score = Math.random() * 10;
+    console.log(score > 5);
+})();
+
 *********** closures ***********
 An inner function has always access to the variables and parametersof its outer functions, even after the outer function has returned.
 
