@@ -1,0 +1,14 @@
+New ES6 Features
+    Variable Declarations with let and const
+    Blocks and IIFEs
+    Strings
+    Arrow Functions
+    Destructing
+    Arrays
+    The Spread Operator
+    Rest and Default Parameters
+    Maps
+    Classes and subclasses
+    Promises
+    Native modules
+    
