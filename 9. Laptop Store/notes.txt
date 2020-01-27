@@ -1,0 +1,20 @@
+to start node
+    in terminal -> node
+
+
+to automatically run when changes made 
+    install nodemon
+
+    sudo npm install nodemon -g
+
+
+
+    then type nodemon in terminal
+
+
+
+
+
+const fs = require('fs');                    file system module
+
+

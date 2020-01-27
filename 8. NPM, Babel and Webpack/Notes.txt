@@ -1,0 +1,391 @@
+before continue check ur npm and node version
+
+    in terminal 
+        npm -v
+        node -v
+
+
+if not found install node js
+
+
+npm install webpack --save-dev
+
+
+
+install npm packages
+npm install jquery --save
+
+global install 
+sudo npm install live-server --global    (run this package from anywhere)
+
+to uninstall
+npm uninstall jquery --save
+
+
+npm install (installs all the dependencies mentioned in the package.json)
+
+terminal usage
+    change to working directory
+    press tab to auto complete directory path ex
+        cd Downloads/javascript/test/8.(press tab) ->>>/8.\ NPM\,\ Babel\ and\ Webpack/   it auto completes the remaining directory text path
+        ls view all the child directory in selected directory
+    clear to clear all the histories
+
+
+        terminal logs
+
+Marss-iMac:8. NPM, Babel and Webpack mars$ npm init
+This utility will walk you through creating a package.json file.
+It only covers the most common items, and tries to guess sensible defaults.
+
+See `npm help json` for definitive documentation on these fields
+and exactly what they do.
+
+Use `npm install <pkg>` afterwards to install a package and
+save it as a dependency in the package.json file.
+
+Press ^C at any time to quit.
+package name: (8.-npm, babel and webpack) foodApp
+Sorry, name can no longer contain capital letters.
+package name: (8.-npm, babel and webpack) food_app
+version: (1.0.0) 
+description: food projecet
+entry point: (index.js) 
+test command: 
+git repository: 
+keywords: 
+author: Marees
+license: (ISC) 
+About to write to /Users/mars/Downloads/javascript/test/Javascript/8. NPM, Babel and Webpack/package.json:
+
+{
+  "name": "food_app",
+  "version": "1.0.0",
+  "description": "food projecet",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Marees",
+  "license": "ISC"
+}
+
+
+Is this OK? (yes) 
+
+
+
+
+
+***************  Webpack ***************
+webpack is used to bundle all the module dependencies into static assets
+
+    * bundle your scripts
+    * bundle your styles
+    * bundle your assets 
+    * bundle your images
+
+
+usage
+    create file in your project workspace
+        webpack.config.js
+
+
+************** Destinition configure **************
+./index.js          -> . current folder
+../index.js         -> .. inside parent folder
+
+
+
+************* example webpack configure ***************
+webpack.config.js
+    const path = require('path');
+
+    module.exports = {
+        entry: './src/js/index.js',                                 //entry path for project
+        output: {                                                   
+            path: path.resolve(__dirname, 'dist/js'),               //output file path __dirname(current project folder(8.NPM, Babel...) dist/js)
+            filename: 'bundle.js'                                    //filename for output
+        }
+    }
+
+package.json
+        {
+      "name": "food_app",
+      "version": "1.0.0",
+      "description": "food projecet",
+      "main": "index.js",
+      "scripts": {
+                               ////change the script to webpack in order to use the webpack
+            "dev": "webpack --mode development",            //for development build
+            "build": "webpack --mode production"            //for production build       (npm run build)
+      },
+      "author": "Marees",
+      "license": "ISC",
+      "devDependencies": {
+        "webpack": "^4.41.2",
+        "webpack-cli": "^3.3.10"
+      },
+      "dependencies": {}
+    }
+
+index.js
+    /// this is the entry point of the project if you want to change change it in a webpack config
+
+
+    import usingOtherJS_EX from './test';
+
+    console.log(`Hey i'm imported ${usingOtherJS_EX} from another module`);
+
+test.js
+    console.log('Hey Welcome to test js');
+
+    export default 20;    
+
+    {{{{{{{{{{{{Workflow}}}}}}}}}}}}
+    1.check the npm script in package.json and calls the webpack config
+    2.from the webpack config entry point is called
+    3.from above config our entry point is index.js from there it imports test.js and console the `hey i'm ......`
+
+    {{{{{{{{{{{{bundle with webpack}}}}}}}}}}}}
+    1. required dependencies in dev 
+
+        "devDependencies": {
+          "webpack": "^4.41.2",
+         "webpack-cli": "^3.3.10"
+         }
+
+    2. npm run dev       (in terminal)
+        logs : 
+            Marss-iMac:8. NPM, Babel and Webpack mars$ npm run dev
+
+            > food_app@1.0.0 dev /Users/mars/Downloads/javascript/test/Javascript/8. NPM, Babel and Webpack
+            > webpack
+
+            Hash: a06887d119386465034d
+            Version: webpack 4.41.2
+            Time: 329ms
+            Built at: 11/27/2019 5:02:55 PM
+                Asset      Size  Chunks             Chunk Names
+            bundle.js  4.66 KiB    main  [emitted]  main
+            Entrypoint main = bundle.js
+            [./src/js/index.js] 233 bytes {main} [built]
+            [./src/js/test.js] 58 bytes {main} [built]
+            Marss-iMac:8. NPM, Babel and Webpack mars$ 
+
+    3. Done... check the output file   (you mentioned in webpack config  here our path is ./dist/js/bundle.js)
+    4. You can use this js to deploy or check with html
+
+
+
+*********** Live reloading ************
+whenever you change file in developing(src) directory automatically changes to distribution(dist)
+
+        here src folder is a workingspace(development)
+        dist folder is aproduction folder where webpack outputs are goes
+
+package.json
+        {
+          "name": "food_app",
+          "version": "1.0.0",
+          "description": "food projecet",
+          "main": "index.js",
+          "scripts": { 
+            "dev": "webpack --mode development",
+            "build": "webpack --mode production",
+            "start": "webpack-dev-server --mode development --open"          
+          },
+          "author": "Marees",
+          "license": "ISC",
+          "devDependencies": {
+            "webpack": "^4.41.2",
+            "webpack-cli": "^3.3.10",
+            "webpack-dev-server": "^3.9.0"
+          },
+          "dependencies": {},
+
+
+
+          "MyComments":{
+            "one": "(start) line 9  ////////whenever npm start command these 'start' script executes "
+          }
+
+        }
+weback.config
+
+        const path = require('path');
+        
+        module.exports = {
+            entry: './src/js/index.js',                                 //entry path for project
+            output: {                                                   
+                path: path.resolve(__dirname, 'dist'),               //output file path __dirname(current project folder(8.NPM, Babel...) dist/js)
+                filename: 'js/bundle.js'                                    //filename for output
+            }, 
+            mode: 'development',
+            devServer: {
+                contentBase :'./dist'
+            }
+        }
+
+
+run command 
+    npm run start 
+        automatically opens the html (changes are made live whenever you change the html/css)
+
+
+
+********************** adding html with webpack **********************
+webpack.config
+            const path = require('path');
+            const HtmlWebpackPlugin = require('html-webpack-plugin');
+
+            module.exports = {
+                entry: './src/js/index.js',                                 //entry path for project
+                output: {                                                   
+                    path: path.resolve(__dirname, 'dist'),               //output file path __dirname(current project folder(8.NPM, Babel...) dist/js)
+                    filename: 'js/bundle.js'                                    //filename for output
+                }, 
+                mode: 'development',
+                devServer: {
+                    contentBase :'./dist'
+                }, 
+                plugins: [
+                    new HtmlWebpackPlugin({
+                        filename: 'index.html',
+                        template: './src/index.html'
+                    })
+                ]
+            }
+package.json
+            {
+              "name": "food_app",
+              "version": "1.0.0",
+              "description": "food projecet",
+              "main": "index.js",
+              "scripts": {
+                "dev": "webpack --mode development",
+                "build": "webpack --mode production",
+                "start": "webpack-dev-server --mode development --open"
+              },
+              "author": "Marees",
+              "license": "ISC",
+              "devDependencies": {
+                "html-webpack-plugin": "^3.2.0",
+                "webpack": "^4.41.2",
+                "webpack-cli": "^3.3.10",
+                "webpack-dev-server": "^3.9.0"
+              },
+              "dependencies": {},
+              "MyComments": {
+                "one": "(start) line 9  ////////whenever npm start command these 'start' script executes "
+              }
+            }
+********************** babel **********************
+
+Babel is a JavaScript compiler.
+    which converts es6, esnxt.... modern javascript codes to es5 to support es6 not supported browsers
+
+
+install
+    npm install babel-core babel-preset-env babel-loader --save-dev                 ///youca install multiple packages like this
+    npm install babel-polyfill --save                   //some concepts like promise, array.from which supports above es6 only cannot converts into es5 like that concept we need polyfill to automatically fill the code
+
+
+configuration
+    webpack.config
+        const path = require('path');
+        const HtmlWebpackPlugin = require('html-webpack-plugin');
+
+        module.exports = {
+            entry: ['babel-polyfill', './src/js/index.js'],                                 //two entry points here babel poly fill then index.js (polyfill applies to index.js)
+            output: {                                                   
+                path: path.resolve(__dirname, 'dist'),               //output file path __dirname(current project folder(8.NPM, Babel...) dist/js)
+                filename: 'js/bundle.js'                                    //filename for output
+            }, 
+            mode: 'development',
+            devServer: {
+                contentBase :'./dist'
+            }, 
+            plugins: [
+                new HtmlWebpackPlugin({
+                    filename: 'index.html',
+                    template: './src/index.html'
+                })
+            ],
+            modules:{
+                rules:[
+                    {
+                        test: /\.js$/,                                              //// (/...../ -> structure of regex)this regex checks for all the files ends with .js ,
+                        exclude: /node_modules/,                                    ////exclude node modules because we dont wnt to convert it
+                        use:{
+                            loader: 'babel-loader'
+                        }
+                    }
+                ]
+            }
+        }
+
+package.json
+        {
+          "name": "food_app",
+          "version": "1.0.0",
+          "description": "food projecet",
+          "main": "index.js",
+          "scripts": {
+            "dev": "webpack --mode development",
+            "build": "webpack --mode production",
+            "start": "webpack-dev-server --mode development --open"
+          },
+          "author": "Marees",
+          "license": "ISC",
+          "devDependencies": {
+            "babel-core": "^6.26.3",
+            "babel-loader": "^8.0.6",
+            "babel-preset-env": "^1.7.0",
+            "html-webpack-plugin": "^3.2.0",
+            "webpack": "^4.41.2",
+            "webpack-cli": "^3.3.10",
+            "webpack-dev-server": "^3.9.0"
+          },
+          "dependencies": {
+            "babel-polyfill": "^6.26.0"
+          },
+          "MyComments": {
+            "one": "(start) line 9  ////////whenever npm start command these 'start' script executes "
+          }
+        }
+
+.babelrc
+      {
+    "presets":[
+        ["env", {
+            "targets": {
+                "browsers": [
+                    "last 5 versions",
+                    "ie >=8"
+                ]
+            }
+        }]
+    ]
+}
+
+
+********************** How ES6 module works **********************
+model(first letter is captital for models)
+    Search.js
+
+        export default 'this is exported string from search model'
+view
+    searchView.js
+
+        export const add = (a, b) => a + b;
+        export const multiply = (a, b) => a * b;
+        export const ID = 2;
+controller
+    index.js
+
+        import str from './model/Search'
+        import * as mySearchView from './view/searchView'
+        //other method to import instead of *all u can import {add, multiply}
+        console.log(`this is imported string from search model : ${str}`);
+        console.log(`this is the imported of multiple exports add : ${mySearchView.add(5, mySearchView.ID)}, multiply ${mySearchView.multiply(5, 5)}`);

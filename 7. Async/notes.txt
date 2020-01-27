@@ -1,0 +1,127 @@
+***************** Promises *****************
+
+    Object that keeps track about whether a certain event has happened already or not;
+    Determines what happens after the event has happened;
+    Implements the concept of a future value that we're expecting 
+
+///////Promise states
+
+
+
+        
+    ****************                            ********************
+    *              *    Event happens           *                  *
+    *   Pending    *    ------------->>>        *     Resolved     *
+    *              *    ------------->>>        *                  *
+    ****************                            ********************
+                                                |                   |
+                                                |                   |                   
+                                                |                   |
+                                                |                   |
+                                                |                   |
+                                                |                   |
+                                           |         |          |       |
+                                            \       /            \     /
+                                              \    /              \   /
+                                                V                   V
+                                        -----------------       -----------------
+                                        -                -      _               _
+                                        -   Fulfilled    -      _   Rejected    _
+                                        -                -      _               _
+                                        ------------------       -----------------
+
+
+***************** AJAX *****************
+
+Asynchronous Javascript And Xml
+
+What are AJAX and APIs
+
+
+            ---------------------------------             
+            -                               -
+            -     Remote Server (API)       -
+            -                               -
+            ---------------------------------
+                  /\
+                 /| \               |
+                / |  \              |
+               /  |   \             |
+                  |                 |
+   Http Request   |                 |  Response
+   (GET,POST,...) |                 |
+                  |                 |
+                  |            \    |    /
+                  |             \   |   /
+                  |               \ | /
+                                   \/        
+
+            ---------------------------------             
+            -                               -
+            -     Javascript app running    -
+            -     on the Client(browser)    -
+            -                               -
+            ---------------------------------
+
+
+
+
+
+            type of customer (search and category)
+            all
+
+
+
+            dealer ->outside / chennai(local)
+            industry
+            builder
+            institute
+            builder
+            contractor
+            individual 
+            govt department
+            interior designer
+            architecture
+
+
+          add customer
+            limit description (as per purchase order)
+            refer
+              through only purchase order
+              flexible
+              
+
+
+
+            type
+              flexible
+              thing 
+            
+
+            
+Async:
+  async waits till the function returns
+  examplie:
+    function async test(){
+      // wait till the below function returns
+      var result = await myFirstResult();
+      var secondResult = await mySecondFunc(result);
+      
+    }
+
+    var firstResult = ()=>{
+      ......
+      ......
+      some long api/or async task 
+      it will wait beause of the await
+
+      return firstResultData;
+    }
+    var secondResult = (result)=>{
+      ......
+      ......
+      some long api/or async task 
+      it will wait beause of the await
+
+      return secondResultData;
+    }
